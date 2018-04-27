@@ -13,64 +13,64 @@ import { AccessoriesService } from '../../services/accessories.service';
   template: `
     <div 
       class="product-item">
-      <pizza-form
-        [pizza]="pizza"
-        [toppings]="toppings"
+      <dog-form
+        [dog]="dog"
+        [accessories]="accessories"
         (selected)="onSelect($event)"
         (create)="onCreate($event)"
         (update)="onUpdate($event)"
         (remove)="onRemove($event)">
-        <pizza-display
-          [pizza]="visualise">
-        </pizza-display>
-      </pizza-form>
+        <dog-display
+          [dog]="visualise">
+        </dog-display>
+      </dog-form>
     </div>
   `,
 })
 export class ProductItemComponent implements OnInit {
-  dpg: Dog;
+  dog: Dog;
   visualise: Dog;
-  toppings: Topping[];
+  accessories: Accessory[];
 
   constructor(
     private dogService: DogService,
-    private toppingsService: ToppingsService,
+    private accessoriesService: AccessoriesService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.dogService.getDog().subscribe(pizzas => {
+    this.dogService.getDog().subscribe(dogs => {
       const param = this.route.snapshot.params.id;
-      let pizza;
+      let dog;
       if (param === 'new') {
-        pizza = {};
+        dog = {};
       } else {
-        pizza = pizzas.find(pizza => pizza.id == parseInt(param, 10));
+        dog = dogs.find(dog => dog.id == parseInt(param, 10));
       }
-      this.pizza = pizza;
-      this.toppingsService.getToppings().subscribe(toppings => {
-        this.toppings = toppings;
-        this.onSelect(toppings.map(topping => topping.id));
+      this.dog = dog;
+      this.accessoriesService.getAccessories().subscribe(accessories => {
+        this.accessories = accessories;
+        this.onSelect(accessories.map(accessory => accessory.id));
       });
     });
   }
 
   onSelect(event: number[]) {
-    let toppings;
-    if (this.toppings && this.toppings.length) {
-      toppings = event.map(id =>
-        this.toppings.find(topping => topping.id === id)
+    let accessories;
+    if (this.accessories && this.accessories.length) {
+      accessories = event.map(id =>
+        this.accessories.find(accessory => accessory.id === id)
       );
     } else {
-      toppings = this.pizza.toppings;
+      accessories = this.dog.accessories;
     }
-    this.visualise = { ...this.pizza, toppings };
+    this.visualise = { ...this.dog, accessories };
   }
 
   onCreate(event: Dog) {
-    this.dogService.createDog(event).subscribe(pizza => {
-      this.router.navigate([`/products/${pizza.id}`]);
+    this.dogService.createDog(event).subscribe(dog => {
+      this.router.navigate([`/products/${dog.id}`]);
     });
   }
 
