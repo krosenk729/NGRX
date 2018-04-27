@@ -12,9 +12,10 @@ export const initialState: DogState = {
 	loading: false
 };
 
+
 export function reducer(
 	state = initialState,
 	action: any
-	){
+	): DogState{
 	return state;
 }
