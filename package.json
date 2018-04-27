@@ -1,7 +1,7 @@
 {
-  "name": "ngrx-store-effects-app",
-  "version": "0.0.0",
-  "author": "Ultimate Angular",
+  "name": "ngrx-doggo-app",
+  "version": "0.0.1",
+  "author": "Katherine",
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p",
