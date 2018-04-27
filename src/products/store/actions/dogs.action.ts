@@ -22,3 +22,8 @@ export class LoadDogsSuccess implements Action{
 	readonly type = LOAD_DOGS_SUCCESS;
 	constructor(public payload: Dog[]){}
 }
+
+// export action types
+// for use in reducers
+
+export type DogActions = LoadDogs | LoadDogsFail | LoadDogsSuccess;
