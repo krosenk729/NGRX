@@ -99,7 +99,7 @@ export class DogFormComponent implements OnChanges {
 
   form = this.fb.group({
     name: ['', Validators.required],
-    toppings: [[]],
+    accessories: [[]],
   });
 
   constructor(private fb: FormBuilder) {}
@@ -118,9 +118,9 @@ export class DogFormComponent implements OnChanges {
       this.form.patchValue(this.dog);
     }
     this.form
-      .get('toppings')
+      .get('accessories')
       .valueChanges.pipe(
-        map(toppings => toppings.map((accessory: Accessory) => accessory.id))
+        map(accessories => accessories.map((accessory: Accessory) => accessory.id))
       )
       .subscribe(value => this.selected.emit(value));
   }

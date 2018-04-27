@@ -12,7 +12,7 @@ import { DogService } from '../../services/dog.service';
         <a
           class="btn btn__ok" 
           routerLink="./new">
-          New Pizza
+          New
         </a>
       </div>
       <div class="products__list">
