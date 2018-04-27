@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { Dog } from '../../models/dog.model';
 
 // load dogs
 // if fail, dispatch fail
@@ -19,5 +20,5 @@ export class LoadDogsFail implements Action{
 
 export class LoadDogsSuccess implements Action{
 	readonly type = LOAD_DOGS_SUCCESS;
-	constructor(public payload: any){}
+	constructor(public payload: Dog[]){}
 }
