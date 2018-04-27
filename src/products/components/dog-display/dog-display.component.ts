@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { transition, style, animate, trigger } from '@angular/animations';
 
+import { Dog } from '../../models/dog.model';
 import { Pizza } from '../../models/pizza.model';
 
 export const DROP_ANIMATION = trigger('drop', [

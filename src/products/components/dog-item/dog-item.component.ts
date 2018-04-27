@@ -7,23 +7,23 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'pizza-item',
+  selector: 'dog-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['pizza-item.component.scss'],
+  styleUrls: ['dog-item.component.scss'],
   template: `
-    <div class="pizza-item">
-      <a [routerLink]="['/products', pizza.id]">
-        <pizza-display
-          [pizza]="pizza">
-        </pizza-display>
-        <h4>{{ pizza.name }}</h4>
+    <div class="dog-item">
+      <a [routerLink]="['/products', dog.id]">
+        <dog-display
+          [dog]="dog">
+        </dog-display>
+        <h4>{{ dog.name }}</h4>
         <button type="button" class="btn btn__ok">
-          View Pizza
+          View dog
         </button>
       </a>
     </div>
   `,
 })
-export class PizzaItemComponent {
-  @Input() pizza: any;
+export class DogItemComponent {
+  @Input() dog: any;
 }

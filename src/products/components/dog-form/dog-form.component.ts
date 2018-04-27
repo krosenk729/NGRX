@@ -17,59 +17,59 @@ import {
 
 import { map } from 'rxjs/operators';
 
-import { Pizza } from '../../models/pizza.model';
-import { Topping } from '../../models/topping.model';
+import { Dog } from '../../models/dog.model';
+import { Accessory } from '../../models/accessory.model';
 
 @Component({
-  selector: 'pizza-form',
-  styleUrls: ['pizza-form.component.scss'],
+  selector: 'dog-form',
+  styleUrls: ['dog-form.component.scss'],
   template: `
-    <div class="pizza-form">
+    <div class="dog-form">
       <form [formGroup]="form">
       
         <label>
-          <h4>Pizza name</h4>
+          <h4>Doggo Name</h4>
           <input 
             type="text" 
             formControlName="name"
-            placeholder="e.g. Pepperoni"
-            class="pizza-form__input"
+            placeholder="e.g. Cutest Pattootiest"
+            class="dog-form__input"
             [class.error]="nameControlInvalid">
           <div
-            class="pizza-form__error"
+            class="dog-form__error"
             *ngIf="nameControlInvalid">
-            <p>Pizza must have a name</p>
+            <p>Must have a name</p>
           </div>
         </label>
       
         <ng-content></ng-content>
 
         <label>
-          <h4>Select toppings</h4>
+          <h4>Select Accessories</h4>
         </label>
-        <div class="pizza-form__list">
+        <div class="dog-form__list">
 
-          <pizza-toppings
-            [toppings]="toppings"
-            formControlName="toppings">
-          </pizza-toppings>
+          <dog-accessories
+            [accessories]="accessories"
+            formControlName="accessories">
+          </dog-accessories>
 
         </div>
 
-        <div class="pizza-form__actions">
+        <div class="dog-form__actions">
           <button
             type="button"
             class="btn btn__ok"
             *ngIf="!exists"
-            (click)="createPizza(form)">
-            Create Pizza
+            (click)="createDog(form)">
+            Create
           </button>
 
           <button
             type="button"
             class="btn btn__ok"
             *ngIf="exists"
-            (click)="updatePizza(form)">
+            (click)="updateDog(form)">
             Save changes
           </button>
 
@@ -77,8 +77,8 @@ import { Topping } from '../../models/topping.model';
             type="button"
             class="btn btn__warning"
             *ngIf="exists"
-            (click)="removePizza(form)">
-            Delete Pizza
+            (click)="removeDog(form)">
+            Delete
           </button>
         </div>
 
@@ -86,16 +86,16 @@ import { Topping } from '../../models/topping.model';
     </div>
   `,
 })
-export class PizzaFormComponent implements OnChanges {
+export class DogFormComponent implements OnChanges {
   exists = false;
 
-  @Input() pizza: Pizza;
-  @Input() toppings: Topping[];
+  @Input() dog: Dog;
+  @Input() accessories: Accessory[];
 
   @Output() selected = new EventEmitter<number[]>();
-  @Output() create = new EventEmitter<Pizza>();
-  @Output() update = new EventEmitter<Pizza>();
-  @Output() remove = new EventEmitter<Pizza>();
+  @Output() create = new EventEmitter<Dog>();
+  @Output() update = new EventEmitter<Dog>();
+  @Output() remove = new EventEmitter<Dog>();
 
   form = this.fb.group({
     name: ['', Validators.required],
@@ -113,34 +113,34 @@ export class PizzaFormComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (this.pizza && this.pizza.id) {
+    if (this.dog && this.dog.id) {
       this.exists = true;
-      this.form.patchValue(this.pizza);
+      this.form.patchValue(this.dog);
     }
     this.form
       .get('toppings')
       .valueChanges.pipe(
-        map(toppings => toppings.map((topping: Topping) => topping.id))
+        map(toppings => toppings.map((accessory: Accessory) => accessory.id))
       )
       .subscribe(value => this.selected.emit(value));
   }
 
-  createPizza(form: FormGroup) {
+  createDog(form: FormGroup) {
     const { value, valid } = form;
     if (valid) {
       this.create.emit(value);
     }
   }
 
-  updatePizza(form: FormGroup) {
+  updateDog(form: FormGroup) {
     const { value, valid, touched } = form;
     if (touched && valid) {
-      this.update.emit({ ...this.pizza, ...value });
+      this.update.emit({ ...this.dog, ...value });
     }
   }
 
-  removePizza(form: FormGroup) {
+  removeDog(form: FormGroup) {
     const { value } = form;
-    this.remove.emit({ ...this.pizza, ...value });
+    this.remove.emit({ ...this.dog, ...value });
   }
 }
