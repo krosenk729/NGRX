@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Pizza } from '../../models/pizza.model';
-import { PizzasService } from '../../services/pizzas.service';
+import { Dog } from '../../models/dog.model';
+import { DogService } from '../../services/dog.service';
 
-import { Topping } from '../../models/topping.model';
-import { ToppingsService } from '../../services/toppings.service';
+import { Accessory } from '../../models/accessory.model';
+import { AccessoriesService } from '../../services/accessories.service';
 
 @Component({
   selector: 'product-item',
@@ -28,19 +28,19 @@ import { ToppingsService } from '../../services/toppings.service';
   `,
 })
 export class ProductItemComponent implements OnInit {
-  pizza: Pizza;
-  visualise: Pizza;
+  dpg: Dog;
+  visualise: Dog;
   toppings: Topping[];
 
   constructor(
-    private pizzaService: PizzasService,
+    private dogService: DogService,
     private toppingsService: ToppingsService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.pizzaService.getPizzas().subscribe(pizzas => {
+    this.dogService.getDog().subscribe(pizzas => {
       const param = this.route.snapshot.params.id;
       let pizza;
       if (param === 'new') {
@@ -68,22 +68,22 @@ export class ProductItemComponent implements OnInit {
     this.visualise = { ...this.pizza, toppings };
   }
 
-  onCreate(event: Pizza) {
-    this.pizzaService.createPizza(event).subscribe(pizza => {
+  onCreate(event: Dog) {
+    this.dogService.createDog(event).subscribe(pizza => {
       this.router.navigate([`/products/${pizza.id}`]);
     });
   }
 
-  onUpdate(event: Pizza) {
-    this.pizzaService.updatePizza(event).subscribe(() => {
+  onUpdate(event: Dog) {
+    this.dogService.updateDog(event).subscribe(() => {
       this.router.navigate([`/products`]);
     });
   }
 
-  onRemove(event: Pizza) {
+  onRemove(event: Dog) {
     const remove = window.confirm('Are you sure?');
     if (remove) {
-      this.pizzaService.removePizza(event).subscribe(() => {
+      this.dogService.removeDog(event).subscribe(() => {
         this.router.navigate([`/products`]);
       });
     }

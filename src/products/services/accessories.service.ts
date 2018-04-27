@@ -11,7 +11,7 @@ import { Accessory } from '../models/accessory.model';
 export class AccessoriesService {
   constructor(private http: HttpClient) {}
 
-  getToppings(): Observable<Accessory[]> {
+  getAccessories(): Observable<Accessory[]> {
     return this.http
       .get<Accessory[]>(`/api/accessories`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
