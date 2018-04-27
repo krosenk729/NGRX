@@ -16,7 +16,7 @@ export const initialState: DogState = {
 
 export function reducer(
 	state = initialState,
-	action: fromDogs.DogActions
+	action: fromDogs.DogAction
 	): DogState{
 
 	return state;

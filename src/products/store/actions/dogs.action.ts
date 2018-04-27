@@ -26,4 +26,4 @@ export class LoadDogsSuccess implements Action{
 // export action types
 // for use in reducers
 
-export type DogActions = LoadDogs | LoadDogsFail | LoadDogsSuccess;
+export type DogAction = LoadDogs | LoadDogsFail | LoadDogsSuccess;
