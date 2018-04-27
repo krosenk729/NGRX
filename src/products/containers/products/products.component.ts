@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { Pizza } from '../../models/pizza.model';
-import { PizzasService } from '../../services/pizzas.service';
+import { Dog } from '../../models/dog.model';
+import { DogService } from '../../services/dog.service';
 
 @Component({
   selector: 'products',
@@ -16,25 +16,25 @@ import { PizzasService } from '../../services/pizzas.service';
         </a>
       </div>
       <div class="products__list">
-        <div *ngIf="!((pizzas)?.length)">
-          No pizzas, add one to get started.
+        <div *ngIf="!((dogs)?.length)">
+          No doggos, add one to get started.
         </div>
-        <pizza-item
-          *ngFor="let pizza of (pizzas)"
-          [pizza]="pizza">
-        </pizza-item>
+        <dog-item
+          *ngFor="let dog of (dogs)"
+          [dog]="dog">
+        </dog-item>
       </div>
     </div>
   `,
 })
 export class ProductsComponent implements OnInit {
-  pizzas: Pizza[];
+  dogs: Dog[];
 
-  constructor(private pizzaService: PizzasService) {}
+  constructor(private dogService: DogService) {}
 
   ngOnInit() {
-    this.pizzaService.getPizzas().subscribe(pizzas => {
-      this.pizzas = pizzas;
+    this.dogService.getDog().subscribe(dogs => {
+      this.dogs = dogs;
     });
   }
 }

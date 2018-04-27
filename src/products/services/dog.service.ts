@@ -11,25 +11,25 @@ import { Dog } from '../models/dog.model';
 export class DogService {
   constructor(private http: HttpClient) {}
 
-  getPizzas(): Observable<Dog[]> {
+  getDog(): Observable<Dog[]> {
     return this.http
       .get<Dog[]>(`/api/dog`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
-  createPizza(payload: Dog): Observable<Dog> {
+  createDog(payload: Dog): Observable<Dog> {
     return this.http
       .post<Dog>(`/api/dog`, payload)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
-  updatePizza(payload: Dog): Observable<Dog> {
+  updateDog(payload: Dog): Observable<Dog> {
     return this.http
       .put<Dog>(`/api/dog/${payload.id}`, payload)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
-  removePizza(payload: Dog): Observable<Dog> {
+  removeDog(payload: Dog): Observable<Dog> {
     return this.http
       .delete<any>(`/api/dog/${payload.id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
