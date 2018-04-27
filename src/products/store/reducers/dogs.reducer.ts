@@ -1,3 +1,4 @@
+import * as fromDogs from '../actions/dogs.action';
 import { Dog } from '../../models/dog.model';
 
 export interface DogState {
@@ -15,7 +16,8 @@ export const initialState: DogState = {
 
 export function reducer(
 	state = initialState,
-	action: any
+	action: fromDogs.DogActions
 	): DogState{
+
 	return state;
 }
