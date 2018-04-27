@@ -1,16 +1,16 @@
-import { PizzaItemComponent } from './pizza-item/pizza-item.component';
-import { PizzaFormComponent } from './pizza-form/pizza-form.component';
-import { PizzaDisplayComponent } from './pizza-display/pizza-display.component';
-import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
+import { DogItemComponent } from './dog-item/dog-item.component';
+import { DogFormComponent } from './dog-form/dog-form.component';
+import { DogDisplayComponent } from './dog-display/dog-display.component';
+import { DogAccessoriesComponent } from './dog-accessories/dog-accessories.component';
 
 export const components: any[] = [
-  PizzaItemComponent,
-  PizzaFormComponent,
-  PizzaDisplayComponent,
-  PizzaToppingsComponent,
+  DogItemComponent,
+  DogFormComponent,
+  DogDisplayComponent,
+  DogAccessoriesComponent,
 ];
 
-export * from './pizza-item/pizza-item.component';
-export * from './pizza-form/pizza-form.component';
-export * from './pizza-display/pizza-display.component';
-export * from './pizza-toppings/pizza-toppings.component';
+export * from './dog-item/dog-item.component';
+export * from './dog-form/dog-form.component';
+export * from './dog-display/dog-display.component';
+export * from './dog-accessories/dog-accessories.component';
