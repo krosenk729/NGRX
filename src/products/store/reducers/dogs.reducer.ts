@@ -19,5 +19,17 @@ export function reducer(
 	action: fromDogs.DogAction
 	): DogState{
 
+	switch(action.type){
+		case fromDogs.LOAD_DOGS: {
+			return {...state, loading: true}
+		}
+		case fromDogs.LOAD_DOGS_SUCCESS: {
+			return {...state, loading: false, loaded: true}
+		}
+		case fromDogs.LOAD_DOGS_FAIL: {
+			return {...state, loading: false, loaded: false}
+		}
+	}
+
 	return state;
 }
