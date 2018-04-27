@@ -1,4 +1,88 @@
 {
+  "accessories": [
+    {
+      "id": 1,
+      "name": "hat1",
+      "display": "Black Hat"
+    },
+    {
+      "id": 2,
+      "name": "hat2",
+      "display": "Party Hat"
+    },
+    {
+      "id": 3,
+      "name": "hat3",
+      "display": "Crown"
+    },
+    {
+      "id": 4,
+      "name": "hat4",
+      "display": "Sailor Hat"
+    },
+    {
+      "id": 5,
+      "name": "hat5",
+      "display": "Viking Hat"
+    },
+    {
+      "id": 6,
+      "name": "glasses1",
+      "display": "Glasses"
+    },
+    {
+      "id": 7,
+      "name": "glasses2",
+      "display": "Clown Glasses"
+    },
+    {
+      "id": 8,
+      "name": "mustache1",
+      "display": "Orange Mustache"
+    },
+    {
+      "id": 9,
+      "name": "mustache2",
+      "display": "Long Mustache"
+    },
+    {
+      "id": 10,
+      "name": "mustache3",
+      "display": "Mustache"
+    }
+  ],
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Selah",
+      "image": "img/doggo/selah7.jpg",
+      "accessories": [
+        {
+          "id": 7,
+          "name": "glasses2"
+        },
+        {
+          "id": 8,
+          "name": "mustache1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Selah",
+      "image": "img/doggo/selah6.jpg",
+      "accessories": [
+        {
+          "id": 7,
+          "name": "glasses2"
+        },
+        {
+          "id": 8,
+          "name": "mustache1"
+        }
+      ]
+    }
+  ],
   "toppings": [
     {
       "id": 1,

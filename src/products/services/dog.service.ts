@@ -13,25 +13,25 @@ export class DogService {
 
   getDog(): Observable<Dog[]> {
     return this.http
-      .get<Dog[]>(`/api/dog`)
+      .get<Dog[]>(`/api/dogs`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
   createDog(payload: Dog): Observable<Dog> {
     return this.http
-      .post<Dog>(`/api/dog`, payload)
+      .post<Dog>(`/api/dogs`, payload)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
   updateDog(payload: Dog): Observable<Dog> {
     return this.http
-      .put<Dog>(`/api/dog/${payload.id}`, payload)
+      .put<Dog>(`/api/dogs/${payload.id}`, payload)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
   removeDog(payload: Dog): Observable<Dog> {
     return this.http
-      .delete<any>(`/api/dog/${payload.id}`)
+      .delete<any>(`/api/dogs/${payload.id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 }

@@ -28,7 +28,7 @@ export const DROP_ANIMATION = trigger('drop', [
   template: `
     <div class="dog-display">
       <div class="dog-display__base">
-        <img src="/assets/img/dog.svg">
+        <img src="assets/{{ dog.image }}">
         <img 
           *ngFor="let accessory of dog?.accessories; index as i;"
           src="/assets/img/accessories/{{ accessory.name }}.svg" 

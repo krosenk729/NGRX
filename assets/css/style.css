@@ -75,3 +75,7 @@ h4 {
 .btn__warning:hover {
   background: #880c14;
 }
+
+img{
+  max-width: 250px;
+}

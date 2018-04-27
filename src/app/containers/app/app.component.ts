@@ -10,13 +10,13 @@ import { Component } from '@angular/core';
     </div>
     <div class="app__content">
       <div class="app__nav">
-        <a routerLink="products" routerLinkActive="active">Products</a>
+        <a routerLink="products" routerLinkActive="active">Doggos</a>
       </div>
       <div class="app__container">
         <router-outlet></router-outlet>
       </div>
       <div class="app__footer">
-        <p>&#x1F43E;</p>
+        <p>🐾</p>
       </div>
     </div>
   </div>

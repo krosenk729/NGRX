@@ -25,8 +25,8 @@ const DOG_ACCESSoRIES_ACCESSOR = {
         *ngFor="let accessory of accessories;"
         (click)="selectAccessory(accessory)"
         [class.active]="existsInAccessories(accessory)">
-        <img src="/assets/img/accessories/singles/{{ accessory.name }}.svg">
-        {{ accessory.name }}
+        <img src="/assets/img/accessories/{{ accessory.name }}.svg">
+        {{ accessory.display || accessory.name }}
       </div>
     </div>
   `,
