@@ -1,6 +1,5 @@
 import { Dog } from '../../models/dog.model';
 
-
 export interface DogState {
 	data: Dog[],
 	loaded: boolean,
@@ -12,3 +11,10 @@ export const initialState: DogState = {
 	loaded: false,
 	loading: false
 };
+
+export function reducer(
+	state = initialState,
+	action: any
+	){
+	return state;
+}
