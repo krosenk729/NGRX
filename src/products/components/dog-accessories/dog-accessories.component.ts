@@ -7,34 +7,34 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Accessory } from '../../models/accessory.model';
 
-const PIZZA_TOPPINGS_ACCESSOR = {
+const DOG_ACCESSoRIES_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => PizzaToppingsComponent),
+  useExisting: forwardRef(() => DogAccessoriesComponent),
   multi: true,
 };
 
 @Component({
-  selector: 'pizza-toppings',
-  providers: [PIZZA_TOPPINGS_ACCESSOR],
+  selector: 'dog-accessories',
+  providers: [DOG_ACCESSoRIES_ACCESSOR],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['pizza-toppings.component.scss'],
+  styleUrls: ['dog-accessories.component.scss'],
   template: `
-    <div class="pizza-toppings">
+    <div class="dog-accessories">
       <div 
-        class="pizza-toppings-item"
-        *ngFor="let topping of toppings;"
-        (click)="selectTopping(topping)"
-        [class.active]="existsInToppings(topping)">
-        <img src="/assets/img/toppings/singles/{{ topping.name }}.svg">
-        {{ topping.name }}
+        class="dog-accessories-item"
+        *ngFor="let accessory of accessories;"
+        (click)="selectAccessory(accessory)"
+        [class.active]="existsInAccessories(accessory)">
+        <img src="/assets/img/accessories/singles/{{ accessory.name }}.svg">
+        {{ accessory.name }}
       </div>
     </div>
   `,
 })
-export class PizzaToppingsComponent implements ControlValueAccessor {
-  @Input() toppings: Topping[] = [];
+export class DogAccessoriesComponent implements ControlValueAccessor {
+  @Input() accessories: Accessory[] = [];
 
-  value: Topping[] = [];
+  value: Accessory[] = [];
 
   private onTouch: Function;
   private onModelChange: Function;
@@ -47,21 +47,21 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
     this.onTouch = fn;
   }
 
-  writeValue(value: Topping[]) {
+  writeValue(value: Accessory[]) {
     this.value = value;
   }
 
-  selectTopping(topping: Topping) {
-    if (this.existsInToppings(topping)) {
-      this.value = this.value.filter(item => item.id !== topping.id);
+  selectAccessory(accessory: Accessory) {
+    if (this.existsInAccessories(accessory)) {
+      this.value = this.value.filter(item => item.id !== accessory.id);
     } else {
-      this.value = [...this.value, topping];
+      this.value = [...this.value, accessory];
     }
     this.onTouch();
     this.onModelChange(this.value);
   }
 
-  existsInToppings(topping: Topping) {
-    return this.value.some(val => val.id === topping.id);
+  existsInAccessories(accessory: Accessory) {
+    return this.value.some(val => val.id === accessory.id);
   }
 }

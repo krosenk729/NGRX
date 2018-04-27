@@ -2,7 +2,6 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { transition, style, animate, trigger } from '@angular/animations';
 
 import { Dog } from '../../models/dog.model';
-import { Pizza } from '../../models/pizza.model';
 
 export const DROP_ANIMATION = trigger('drop', [
   transition(':enter', [
@@ -22,24 +21,24 @@ export const DROP_ANIMATION = trigger('drop', [
 ]);
 
 @Component({
-  selector: 'pizza-display',
+  selector: 'dog-display',
   animations: [DROP_ANIMATION],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['pizza-display.component.scss'],
+  styleUrls: ['dog-display.component.scss'],
   template: `
-    <div class="pizza-display">
-      <div class="pizza-display__base">
-        <img src="/assets/img/pizza.svg">
+    <div class="dog-display">
+      <div class="dog-display__base">
+        <img src="/assets/img/dog.svg">
         <img 
-          *ngFor="let topping of pizza?.toppings; index as i;"
-          src="/assets/img/toppings/{{ topping.name }}.svg" 
+          *ngFor="let accessory of dog?.accessories; index as i;"
+          src="/assets/img/accessories/{{ accessory.name }}.svg" 
           [style.zIndex]="i"
-          class="pizza-display__topping"
+          class="dog-display__accessory"
           @drop>
       </div>
     </div>
   `,
 })
-export class PizzaDisplayComponent {
-  @Input() pizza: Pizza;
+export class DogDisplayComponent {
+  @Input() dog: Dog;
 }
