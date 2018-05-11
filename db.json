@@ -70,15 +70,17 @@
     {
       "id": 2,
       "name": "Selah",
-      "image": "img/doggo/selah6.jpg",
+      "image": "img/doggo/selah2.jpg",
       "accessories": [
         {
-          "id": 7,
-          "name": "glasses2"
+          "id": 4,
+          "name": "hat4",
+          "display": "Sailor Hat"
         },
         {
-          "id": 8,
-          "name": "mustache1"
+          "id": 9,
+          "name": "mustache2",
+          "display": "Long Mustache"
         }
       ]
     }
