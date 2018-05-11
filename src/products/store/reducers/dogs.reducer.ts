@@ -8,7 +8,23 @@ export interface DogState {
 }
 
 export const initialState: DogState = {
-	data: [],
+	data: [
+    {
+      "id": 1,
+      "name": "Selah",
+      "image": "img/doggo/selah7.jpg",
+      "accessories": [
+        {
+          "id": 7,
+          "name": "glasses2"
+        },
+        {
+          "id": 8,
+          "name": "mustache1"
+        }
+      ]
+    }
+    ],
 	loaded: false,
 	loading: false
 };
