@@ -49,3 +49,7 @@ export function reducer(
 
 	return state;
 }
+
+export const getDogsLoading = (state: DogState) => state.loading;
+export const getDogsLoaded = (state: DogState) => state.loaded;
+export const getDogs = (state: DogState) => state.data;
