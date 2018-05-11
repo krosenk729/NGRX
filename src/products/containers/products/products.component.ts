@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
   constructor(private store: Store<fromStore.ProductsState>) {}
 
   ngOnInit() {
-    this.store.select<any>('products').subscribe(state =>{
+    this.store.select(fromStore.getDogsAll).subscribe(state =>{
       console.log(state);
     });
   }
