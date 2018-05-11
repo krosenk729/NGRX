@@ -17,11 +17,11 @@ import { Dog } from '../../models/dog.model';
         </a>
       </div>
       <div class="products__list">
-        <div *ngIf="!((dogs)?.length)">
+        <div *ngIf="!((dogs$ | async)?.length)">
           No doggos, add one to get started.
         </div>
         <dog-item
-          *ngFor="let dog of (dogs)"
+          *ngFor="let dog of (dogs$ | async)"
           [dog]="dog">
         </dog-item>
       </div>
@@ -29,13 +29,11 @@ import { Dog } from '../../models/dog.model';
   `,
 })
 export class ProductsComponent implements OnInit {
-  dogs: Dog[];
+  dogs$: Observable<Dog[]>;
 
   constructor(private store: Store<fromStore.ProductsState>) {}
 
   ngOnInit() {
-    this.store.select(fromStore.getDogsAll).subscribe(state =>{
-      console.log(state);
-    });
+    this.dogs$ = this.store.select(fromStore.getDogsAll);
   }
 }
