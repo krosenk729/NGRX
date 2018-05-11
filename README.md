@@ -1,6 +1,23 @@
 Steps:
 + Action constants and creators 
 + Create and register reducers
++ State composition with selectors 
++ 
+
+#### State Tree
+```
+const state = {
+	products: {
+		dog: {
+			data: [],
+			loaded: false,
+			loading: false
+		}
+	}
+}
+```
+
++ https://github.com/UltimateAngular/ngrx-store-effects-app
 
 
 #### Project
