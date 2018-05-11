@@ -1,17 +1,7 @@
+Steps:
++ Action constants and creators 
++ Create and register reducers
 
-https://www.freepik.com/free-vector/pack-of-colorful-photo-booth-accessories_1026097.htm
-
-https://www.freepik.com/free-vector/several-accessories-for-photo-booth_1039964.htm
-
-https://www.vecteezy.com/vector-art/92135-vintage-sunglasses-vectors
-
-https://www.vecteezy.com/vector-art/83915-vintage-roaring-20s-icons
-
-https://www.vecteezy.com/vector-art/85231-hipster-style-design-elements
-
-https://www.vecteezy.com/vector-art/135577-free-party-vector-icons
-
-https://www.vecteezy.com/vector-art/91868-vector-cool-dude-with-glasses-and-mustache
 
 #### Project
 
@@ -35,3 +25,13 @@ further about to dive deeper or understand in more detail what they are:
   docs
 * [npm](https://www.npmjs.com/)
 * [Webpack](https://webpack.js.org/)
+
+#### Trash These Links Later
+
+https://www.freepik.com/free-vector/pack-of-colorful-photo-booth-accessories_1026097.htm
+https://www.freepik.com/free-vector/several-accessories-for-photo-booth_1039964.htm
+https://www.vecteezy.com/vector-art/92135-vintage-sunglasses-vectors
+https://www.vecteezy.com/vector-art/83915-vintage-roaring-20s-icons
+https://www.vecteezy.com/vector-art/85231-hipster-style-design-elements
+https://www.vecteezy.com/vector-art/135577-free-party-vector-icons
+https://www.vecteezy.com/vector-art/91868-vector-cool-dude-with-glasses-and-mustache

@@ -4,6 +4,7 @@ import { Dog } from '../../models/dog.model';
 // load dogs
 // if fail, dispatch fail
 // if success, dispatch success
+// Bracket notation is adding namespaces 
 export const LOAD_DOGS = '[Products] Load Dogs';
 export const LOAD_DOGS_FAIL = '[Products] Load Dogs Fail';
 export const LOAD_DOGS_SUCCESS = '[Products] Load Dogs Success';
