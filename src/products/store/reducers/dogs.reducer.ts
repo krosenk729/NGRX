@@ -50,7 +50,7 @@ export function reducer(
 	return state;
 }
 
-// selectors 
+// exported functions for selectors 
 export const getDogsLoading = (state: DogState) => state.loading;
 export const getDogsLoaded = (state: DogState) => state.loaded;
 export const getDogs = (state: DogState) => state.data;

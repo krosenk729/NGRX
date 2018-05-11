@@ -23,3 +23,15 @@ export const getDogState = createSelector(
 	(state: ProductsState) => state.dogs
 );
 
+export const getDogsAll = createSelector(
+	getDogState, 
+	fromDogs.getDogs
+);
+export const getDogsLoaded = createSelector(
+	getDogState, 
+	fromDogs.getDogsLoaded
+);
+export const getDogsLoading = createSelector(
+	getDogState, 
+	fromDogs.getDogsLoading
+);
