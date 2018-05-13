@@ -41,6 +41,6 @@ export function reducer(
 }
 
 // exported functions for selectors 
+export const getDogsEntities = (state: DogState) => state.entities;
 export const getDogsLoading = (state: DogState) => state.loading;
 export const getDogsLoaded = (state: DogState) => state.loaded;
-export const getDogs = (state: DogState) => state.data;
