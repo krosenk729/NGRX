@@ -8,23 +8,7 @@ export interface DogState {
 }
 
 export const initialState: DogState = {
-	data: [
-    {
-      "id": 1,
-      "name": "Selah",
-      "image": "img/doggo/selah7.jpg",
-      "accessories": [
-        {
-          "id": 7,
-          "name": "glasses2"
-        },
-        {
-          "id": 8,
-          "name": "mustache1"
-        }
-      ]
-    }
-    ],
+	data: [],
 	loaded: false,
 	loading: false
 };
@@ -40,7 +24,8 @@ export function reducer(
 			return {...state, loading: true}
 		}
 		case fromDogs.LOAD_DOGS_SUCCESS: {
-			return {...state, loading: false, loaded: true}
+			const data = action.payload;
+			return {...state, loading: false, loaded: true, data}
 		}
 		case fromDogs.LOAD_DOGS_FAIL: {
 			return {...state, loading: false, loaded: false}
