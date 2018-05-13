@@ -35,5 +35,6 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.dogs$ = this.store.select(fromStore.getDogsAll);
+    this.store.dispatch(new fromStore.LoadDogs());
   }
 }
