@@ -23,10 +23,18 @@ export const getDogState = createSelector(
 	(state: ProductsState) => state.dogs
 );
 
-export const getDogsAll = createSelector(
+export const getDogsEntities = createSelector(
 	getDogState, 
-	fromDogs.getDogs
+	fromDogs.getDogsEntities
 );
+
+export const getDogsAll = createSelector(
+	getDogsEntities,
+	(entities) => {
+		return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
+	}
+);
+
 export const getDogsLoaded = createSelector(
 	getDogState, 
 	fromDogs.getDogsLoaded
