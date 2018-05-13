@@ -24,8 +24,13 @@ export function reducer(
 			return {...state, loading: true}
 		}
 		case fromDogs.LOAD_DOGS_SUCCESS: {
-			const data = action.payload;
-			return {...state, loading: false, loaded: true, data}
+			const dogs = action.payload;
+			const entities = dogs.reduce(
+				(entities, dog) => {
+				return {...entities, [dog.id]: dog}
+			}, {...state});
+			
+			return {...state, loading: false, loaded: true, entities}
 		}
 		case fromDogs.LOAD_DOGS_FAIL: {
 			return {...state, loading: false, loaded: false}
