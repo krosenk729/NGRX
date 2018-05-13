@@ -2,7 +2,7 @@ Steps:
 + Action constants and creators 
 + Create and register reducers
 + State composition with selectors 
-+ 
++ (p) Concepts of effects
 
 #### State Tree
 ```
