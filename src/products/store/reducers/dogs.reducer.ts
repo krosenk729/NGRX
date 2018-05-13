@@ -2,13 +2,13 @@ import * as fromDogs from '../actions/dogs.action';
 import { Dog } from '../../models/dog.model';
 
 export interface DogState {
-	data: Dog[],
+	entities: { [id: number]: Dog },
 	loaded: boolean,
 	loading: boolean
 }
 
 export const initialState: DogState = {
-	data: [],
+	entities: {},
 	loaded: false,
 	loading: false
 };
